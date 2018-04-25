@@ -1,0 +1,85 @@
+Difference between PHP 5 and PHP 7:
+
+	1. Zend engine 		-	Php 5 uses Zend Engine II. Php7 uses new version named PHP#NG(Next Generation)
+	2. Twicce the speed	-	PHPNG performance improvement and optimized memory usage. Code and server executed fast
+	3. Error handling	-	The new engine introduced BaseException class, which will handle the fatal errors. Two kinds of error hadling:
+					a. Traditional and b. Engine exceptions
+	4. 64-bit windows system support
+	5. Accurates type declarations	- New type declarations introduced to expect the value in int, float, string and bool.
+	6. IMports from same namespace	- To import multiple classes from same namespace.	
+
+	Reference Links : https://www.quora.com/What-are-the-major-difference-between-PHP-5-and-PHP-7
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PHP Optimization Techniques
+
+	Reference Links :	https://www.thegeekstuff.com/2014/04/optimize-php-code/
+
+	1. Use Native Functions
+	2. Use Single Quotes
+	3. Use "====" instead of "=="
+	4. Use appropriate str functions
+	5. Pass reference to function
+	6. Create a class when only its required
+	7. Disable debugging messages
+	8. Use Caching techniques
+	9. Close the DB connection
+	10. Reduce number of hits to DB
+	11. Frequently use switch cases
+	12. Use methods in derived classes
+	13. USe Json instead of XML while working with web service which haves default function to convert. Like json_decode() and json_encode()
+	14. Use isset() instead of count, strlen, sizeof to check whether the value is greater than 0. 
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between Isset and Empty and isNULL
+
+	Reference Links	:	https://stackoverflow.com/questions/20582962/whats-the-difference-between-isset-and-empty-in-php
+
+	isset()	-	ISSET returns TRUE if the variable exists and has a value other than NULL. 
+			That means variables assigned  "", 0, "0", or FALSE are set, and therefore are TRUE for ISSET
+			
+			Eg: 
+				1. $x = ''; returns TRUE
+				2. $x = null; returns FALSE
+				3. var $x ; returns FALSE
+
+				Remaining all formats returns TRUE
+				
+
+	empty()	-	EMPTY checks to see if a variable is empty.
+			
+			Eg: 
+				1. $x = ''; returns TRUE
+				2. $x = null; returns TRUE
+				3. var $x ; returns TRUE
+
+	is_null() -	EMPTY checks to see if a variable is empty.
+			
+			Eg: 
+				1. $x = ''; returns FALSE
+				2. $x = null; returns TRUE
+				3. var $x ; returns TRUE
+		
+			Remaining all formats returns FALSE
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Swap value of two variables without using third variable and using PHP inbuilt functions
+
+	Eg: 
+		$a = 15;
+		$b = 276;
+		echo "\nBefore swapping:  ". $a . ',' . $b;
+		list($a, $b) = array($b, $a);
+		echo "\nAfter swapping:  ". $a . ',' . $b."\n";
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference Between PUT and PATCH methods :
+
+	
