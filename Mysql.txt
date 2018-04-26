@@ -7,6 +7,57 @@ Table and Row level locking
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
+MySQL and MySQLI :
+
+	Mysql:						Mysqli:
+
+	MySQL is the old database driver		MySQLi is the Improved driver. The "i" stands for "improved" so it is MySQL improved
+	MySQL can only be used procedurally		MySQLi can be done procedural and object-oriented
+	Deprecated as of PHP 5.5.0			Included with PHP 5 and later
+							Mysqli also supports prepared statements which protect from SQL Injection
+							Mysqli supports Multiple Statements
+							Mysqli support for Transactions
+						
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SQL Injection : 
+
+	Example 1: 
+	
+	GET request	:	http://www.estore.com/items/items.asp?itemid=999 or 1=1
+
+	Query executes 	:	SELECT ItemName, ItemDescription FROM Items WHERE ItemNumber = 999 OR 1=1
+
+				Since the statement 1 = 1 is always true, the query returns all of the product names and descriptions in the database, 
+				even those thay you may not be eligible to access.
+
+	Example 2: 
+	
+	GET request	:	http://www.estore.com/items/iteams.asp?itemid=999; DROP TABLE Users
+
+	Query executes 	:	SELECT ItemName, ItemDescription FROM Items WHERE ItemNumber = 999; DROP TABLE USERS
+
+				As a result, the entire user database could be deleted.
+
+
+	Example 3: 
+	
+	GET request	:	http://www.estore.com/items/items.asp?itemid=999 UNION SELECT user-name, password FROM USERS
+
+	Query executes 	:	SELECT ItemName, ItemDescription FROM Items WHERE ItemID = '999' UNION SELECT Username, Password FROM Users;
+
+				Using the UNION SELECT statement, this query combines the request for item 999’s name and description 
+				with another that pulls names and passwords for every user in the database.
+
+
+	Prevention : 
+
+		1. 	Input Validation
+		2. 	Using Query builder in model frameworks, since it valdiates the input by having function like, save, store and update etc.
+
+	
+
 
 
 

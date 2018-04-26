@@ -1,0 +1,95 @@
+PHP program to calculate Fibonacci
+
+	function printFibonacci($n)
+	{
+
+		$first = 0;
+		$second = 1;
+
+		echo "Fibonacci Series \n";
+
+		echo $first.' '.$second.' ';
+
+		for($i = 2; $i < $n; $i++){
+
+			$third = $first + $second;
+
+			echo $third.' ';
+
+			$first = $second;
+			$second = $third;
+
+		}
+	}
+  
+	/* Function call to print Fibonacci series upto 6 numbers. */
+ 
+	printFibonacci(6);
+	
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PHP program to calculate Prime
+
+	function IsPrime($n)
+	{
+		for($x=2; $x<$n; $x++)
+		{
+			if($n %$x ==0)
+			{
+			return 0;
+			}
+		}
+		return 1;
+	}
+	$a = IsPrime(3);
+	if ($a==0)
+		echo 'This is not a Prime Number.....'."\n";
+	else
+		echo 'This is a Prime Number..'."\n";
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PHP program to calculate Factorial
+
+	$num = 4;
+	
+	$factorial = 1;
+	
+	for ($x=$num; $x>=1; $x--) 
+	{
+		$factorial = $factorial * $x;
+	}
+	
+	echo "Factorial of $num is $factorial";
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PHP program to calculate Palindrome
+
+	$num = 121;
+	
+	$p=$num;
+	
+	$revnum = 0;
+	
+	while ($num != 0)
+	{
+		$revnum = $revnum * 10 + $num % 10;
+		//below cast is essential to round remainder towards zero
+		$num = (int)($num / 10); 
+	}
+	 
+	if($revnum==$p)
+	{
+		echo $p," is Palindrome number";
+	}
+	else
+	{
+		echo $p." is not Palindrome number";
+	}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+	

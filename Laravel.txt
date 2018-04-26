@@ -1,0 +1,646 @@
+Interview Questions:
+
+	Reference Links	:	http://www.laravelinterviewquestions.com/laravel-interview-questions-and-answers#sthash.8Tp8YluW.dpbs
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Benefits of Laravel:
+
+	1. 	Top benifits of laravel framework
+	2. 	Setup and customization process is  easy and fast as compared to others.
+	3. 	Inbuilt Authentication System.
+	4. 	Supports multiple file systems
+	5. 	Pre-loaded packages like Laravel Socialite, Laravel cashier, Laravel elixir,Passport,Laravel Scout.
+	6. 	Eloquent ORM (Object Relation Mapping) with PHP active record implementation. 
+	7.	Built in command line tool “Artisan” for creating a code skeleton ,database structure and build their migration.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Features of Laravel :
+
+	1. It’s Modularity
+		
+			In Software Industry, Modularity refers to a degree in which a large system or application components/modules 
+			may be divided into smaller components and recombined.In Modularity, you can split your business logic into 
+			different parts which belong to single Entity.Laravel provides modular development approach in form of Packages that are pluggable.
+
+	2. Authentication
+		
+			Authentication is one of the most important part of any web application, developers spent enormous time writing 
+			the authentication code again & again.Laravel 5 provide simple inbuilt authentication that can be easily integrated 
+			with your Laravel application by running few artisan commands.
+
+	3. Application Logic
+
+			In Laravel Application logic is written in Controllers or directly in routes.
+
+	4. Caching
+	
+			Caching is used for storage of data on a temporary basis for a while and can be retrieved quickly.
+			Using caching can reduce the load on the database server.Laravel provides an expressive, 
+			unified API to interact with the various caching backends.Laravel supports caching backends like Memcached and Redis 
+			that are easily configured with Laravel.
+
+	5. Method or Dependency Injection
+
+			Laravel’s service container is a powerful tool for managing class dependencies and performing dependency injection in the application. 
+			Dependency injection is a fancy phrase that essentially means this: class dependencies are “injected” into the 
+			class via the constructor or, in some cases, “setter” methods.(source https://laravel.com/docs/5.5/container)
+
+	6.Routing
+
+			In Laravel Routing is used for attaching Application URLs to a specific controller action or view.
+			In Laravel 5.4 all routes are defined in your route files under routes folder. 
+			A basic route in Laravel takes an URL and a Closure function.you can read more about routing from https://laravel.com/docs/5.5/routing.
+
+	7.Automatic Pagination
+
+			Laravel has inbuilt paginations, that elimate the headache of writting code for paginating records
+
+	8.Template Engine
+		
+			Blade is a simple, yet powerful templating engine provided with Laravel. Unlike other popular PHP templating engines, 
+			Blade does not restrict you from using plain PHP code in your views. All Blade templates files should use the .blade.php extension.
+
+	9.Database Query Builder
+	
+			Laravel’s database query builder provides a convenient, fluent interface to creating and running database queries. 
+			It can be used to perform most database operations in your application and works on all supported database systems. 
+			The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. 
+			There is no need to clean strings being passed as bindings.
+
+	10.Eloquent ORM
+
+			In Laravel Eloquent is ORM that implements Active Records.Active Record Implementation is an architectural pattern found in 
+			software engineering that stores in-memory object data in relational databases.
+
+
+	Latest Featues in Laravel:
+
+
+		Inbuilt CRSF (cross-site request forgery ) Protection.
+
+			Laravel provided an easy way to protect your website from cross-site request forgery (CSRF) attacks.
+			Cross-site request forgeries are malicious attack that forces an end user to execute unwanted actions on a web application 
+			in which they’re currently authenticated.
+
+		Inbuilt paginations 
+			
+			Laravel provides an easy approach to implement paginations in your application.Laravel’s paginator is integrated 
+			with the query builder and Eloquent ORM and provides convenient, easy-to-use pagination of database.
+
+		Reverse Routing
+
+			In Laravel reverse routing is generating URL’s based on route declarations.Reverse routing makes your application so much more flexible.
+
+		Query builder:
+	
+			Laravel’s database query builder provides a convenient, fluent interface to creating and running database queries. 
+			It can be used to perform most database operations in your application and works on all supported database systems.
+			The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. 
+			There is no need to clean strings being passed as bindings. read more
+
+		Route caching
+
+		Database Migration
+
+		IOC (Inverse of Control) Container Or service container.
+			
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Composer
+
+	Composer is PHP dependency manager used for installing dependencies of PHP applications.
+	It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+
+	It provides us a nice way to reuse any kind of code. Rather than all of us reinventing the wheel over and over, we can instead download popular packages.
+
+
+	How to install Laravel via composer ?
+
+	composer create-project Laravel/Laravel your-project-name version
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is php artisan. List out some artisan commands
+
+	PHP artisan is the command line interface/tool included with Laravel. 
+	It provides a number of helpful commands that can help you while you build your application easily. 
+	
+	Here are the list of some artisian command.
+	
+		php artisan list
+		php artisan help
+		php artisan tinker
+		php artisan make
+		php artisan –versian
+		php artisan make model model_name
+		php artisan make controller controller_name
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Check Laravel Version:
+
+	php artisan --version
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Aggregate Methods in Laravel
+
+	Aggregate function is a function where the values of multiple rows are grouped together as input on certain criteria to form 
+	a single value of more significant meaning or measurements such as a set, a bag or a list
+
+	Below is list of some Aggregates methods provided by Laravel query builder.
+
+		count()
+
+			Usage:$products = DB::table(‘products’)->count();
+
+		max()
+
+			Usage:$price = DB::table(‘orders’)->max(‘price’);
+
+		min()
+
+			Usage:$price = DB::table(‘orders’)->min(‘price’);
+
+		avg()
+
+			Usage:$price = DB::table(‘orders’)->avg(‘price’);
+
+		sum()
+
+			Usage: $price = DB::table(‘orders’)->sum(‘price’);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Events
+
+	An event is an incident or occurrence detected and handled by the program.Laravel event provides a simple observer implementation, 
+	that allow us to subscribe and listen for events in our application.An event is an incident or occurrence detected and handled by the program.
+	Laravel event provides a simple observer implementation, that allows us to subscribe and listen for events in our application.
+
+	Below are some events examples in Laravel:-
+
+		A new user has registered
+
+		A new comment is posted
+
+		User login/logout
+
+		New product is added.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Turn off CSRF protection in Laravel :
+
+	To turn off or diasble CRSF protection for specific routes in Laravel open “app/Http/Middleware/VerifyCsrfToken.php” file and 
+	add following code in it
+
+	//add this in your class
+	private $exceptUrls = ['controller/route1', 'controller/route2'];
+
+	//modify this function
+
+	public function handle($request, Closure $next)
+	{
+
+		 //add this condition
+		foreach($this->exceptUrls as $route) {
+
+ 			if ($request->is($route)) {
+
+  				return $next($request);
+
+ 			}
+
+		}
+		return parent::handle($request, $next);
+	}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Service Prodviders in Laravel
+
+	Service providers are the central place of all Laravel application bootstrapping. Your own application, as well as all of 
+	Laravel’s core services are bootstrapped via service providers.
+
+	Service provider basically registers event listeners, middleware, routes to Laravel’s service container.
+	All service providers need to be registered in providers array of app/config.php file.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Register a Service Provider:
+
+	To register a service provider follow below steps
+
+		Open to config/app.php
+		Find ‘providers’ array of the various ServiceProviders.
+		Add namespace ‘Iluminate\Abc\ABCServiceProvider:: class,’ to the end of the array.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Route defining:
+
+	Explicit Controllers
+
+		Route::get('users', 'UsersController@index');
+		Route::get('users/ajax', 'UsersController@ajax');
+
+	RESTFul Routing:
+
+		Route::resource('users', 'UsersController', ['except' => ['show', 'index']]);
+
+
+	Implicit Controllers
+
+		Route::controller('base URI','');// not recommended
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Composer dump-autoload
+
+	Whenever we run “composer dump-autoload”
+		Composer re-reads the composer.json file to build up the list of files to autoload.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Get IP address in Laravel
+
+	public function getUserIp(Request $request){
+		// Getting ip address of remote user
+		return $user_ip_address=$request->ip();
+	}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Enable query Log in Laravel
+
+	Use the enableQueryLog method:
+
+		DB::connection()->enableQueryLog();
+	
+	You can get an array of the executed queries by using the getQueryLog method:
+
+		$queries = DB::getQueryLog();
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Laravel Facades:
+
+	Laravel Facades provides a static like interface to classes that are available in the application’s service container.
+
+	Laravel self ships with many facades which provide access to almost all features of Laravel’s.
+	Laravel Facades serve as “static proxies” to underlying classes in the service container and provides benefits of a terse, 
+	expressive syntax while maintaining more testability and flexibility than traditional static methods of classes. 
+	All of Laravel’s facades are defined in the IlluminateSupportFacades namespace. You can easily access a Facade like so:
+
+	use Illuminate\Support\Facades\Cache;
+		Route::get('/cache', function () {
+		return Cache::get('key');
+	}); 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Use custom table in Laravel:
+
+	It can be defined in the model file
+
+		class User extends Eloquent{
+ 			protected $table="my_custom_table";
+		}  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Define Fillable Attribute:
+
+	Class User extends Eloquent{
+ 		protected $fillable =array('id','first_name','last_name','age');
+	}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Eloquent Cursor() method
+
+	The cursor method allows you to iterate through your database records using a cursor, which will only execute a single query. 
+	When processing large amounts of data, the cursor method may be used to greatly reduce your memory usage.
+
+	foreach (Product::where('name', 'bar')->cursor() as $flight) {
+
+ 		//do some stuff
+
+	}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Closures In Laravel
+
+	Closures are an anonymous function that can be assigned to a variable or passed to another function as an argument.
+	A Closures can access variables outside the scope that it was created
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Contracts:
+
+	Laravel’s Contracts are nothing but set of interfaces that define the core services provided by the Laravel framework.
+
+	Examples:
+
+		Illuminate\Contracts\Queue\Queue - defines the methods needed for queueing jobs
+
+		Illuminate\Contracts\Mail\Mailer - defines the methods needed for sending e-mail.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+compact() laravel
+
+	PHP compact function takes each key and tries to find a variable with that same name.If the variable is found, them it builds an associative array.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ORM	-	Object-relational Mapping (ORM) is a programming technique for 
+		converting data between incompatible type systems in object-oriented programming languages.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Get LoggedIn user info :
+
+	Auth::User() -  function is used to get Logged in user info in Laravel.
+
+	Example:
+	
+		if(Auth::check()){
+  			$loggedIn_user=Auth::User();
+  			dd($loggedIn_user);
+		}  
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Does Laravel support caching?
+
+	Yes, Laravel supports popular caching backends like Memcached and Redis.
+	By default, Laravel is configured to use the file cache driver, which stores the serialized, cached objects in the file system .
+	For large projects it is recommended to use Memcached or Redis.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Named Routes:
+
+	Named routing is another amazing feature of Laravel framework. 
+	Named routes allow referring to routes when generating redirects or Url’s more comfortably.
+
+	Example:
+
+		Route::get('user/profile', function () {
+    			//
+		})->name('profile');
+
+
+		You can specify route names for controller actions:
+
+			Route::get('user/profile', 'UserController@showProfile')->name('profile');
+
+
+		Once you have assigned a name to your routes, you may use the route's name when generating URLs or redirects via the global route function:
+
+		// Generating URLs...
+		$url = route('profile');
+
+		// Generating Redirects...
+		return redirect()->route('profile');
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Traits in Laravel:
+
+	Laravel Traits are simply a group of methods that you want include within another class. 
+	A Trait, like an abstract classes cannot be instantiated by itself.Trait are created to reduce the limitations of single inheritance 
+	in PHP by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies.
+
+	Here is an example of trait.
+		
+		trait Sharable {
+ 
+  			public function share($item)
+  			{
+    				return 'share this item';
+  			}
+ 
+		}
+		You could then include this Trait within other classes like this:
+
+		class Post {
+ 
+  			use Sharable;
+ 
+		}
+ 
+		class Comment {
+ 
+  			use Sharable;
+ 
+		}
+		Now if you were to create new objects out of these classes you would find that they both have the share() method available:
+		$post = new Post;
+		echo $post->share(''); // 'share this item' 
+ 
+		$comment = new Comment;
+		echo $comment->share(''); // 'share this item'
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Migration create:
+
+	Example : php artisan make:migration create_users_table
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Eloquent:
+
+	Laravel’s Eloquent ORM is one the most popular PHP ORM (OBJECT RELATIONSHIP MAPPING).
+	It provides a beautiful, simple ActiveRecord implementation to work with your database.
+	In Eloquent each database table has the corresponding MODEL that is used to interact with table and perform a database related operation on the table.
+	
+	Sample Model Class in Laravel.
+
+		namespace App;
+
+		use Illuminate\Database\Eloquent\Model;
+	
+		class Users extends Model
+		{
+   
+		}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Can laravel be hacked ?
+
+	Answers to this question is NO.Laravel application’s are 100% secure (depends what you mean by “secure” as well), 
+	in terms of things you can do to prevent unwanted data/changes done without the user knowing.
+	Larevl have inbuilt CSRF security, input validations and encrypted session/cookies etc. 
+	Also, Laravel uses a high encryption level for securing Passwords.
+
+	With every update, there’s the possibility of new holes but you can keep up to date with Symfony changes and security issues on their site.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Active Record Implementation
+
+	Achieved using ORM.
+
+	Example : 
+
+		$product = new Product;
+			
+		$product->title = 'Iphone 6s';
+				
+		$product->save();
+
+	Active Record style ORMs map an object to a database row. 
+	In the above example, we would be mapping the Product object to a row in the products table of database.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Types of Relationships:
+
+	One To One
+	One To Many
+	One To Many (Inverse)
+	Many To Many
+	Has Many Through
+	Polymorphic Relations
+	Many To Many Polymorphic Relations
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Laravel query Builder
+
+	Laravel’s database query builder provides a suitable, easy interface to creating and organization database queries. 
+	It can be used to achieve most database operations in our application and works on all supported database systems. 
+	The Laravel query planner uses PDO restriction necessary to keep our application against SQL injection attacks.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Elixir:
+
+	Laravel Elixir provides a clean, fluent API for defining basic Gulp tasks for your Laravel application. 
+	Elixir supports common CSS and JavaScript preprocessors like Sass and Webpack. 
+	Using method chaining, Elixir allows you to fluently define your asset pipeline.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Maintenance Mode : 
+
+	//To enable maintenance mode
+	php artisan down
+	//To disable maintenance mode
+        php artisan up
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Database Supports:
+
+	MYSQL
+
+	SQLITE
+
+	POSTGRES
+
+	SQL SERVER
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Get Current Environment:
+
+	$environment = App::environment();
+	dd($environment);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Method Spoofing:
+
+	As HTML forms does not supports PUT, PATCH or DELETE request. So, when defining PUT, PATCH or DELETE routes that are called from an HTML form, 
+	you will need to add a hidden _method field to the form. The value sent with the _method field will be used as the HTTP request method:
+
+	<form action="/foo/bar" method="POST">
+    		<input type="hidden" name="_method" value="PUT">
+    		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	</form>
+
+	To generate the hidden input field _method, you may also use the method_field helper function:
+
+	<?php echo method_field('PUT'); ?>
+
+	In Blade template you can write it as below
+
+	{{ method_field('PUT') }}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assign Multiple Middleware:
+
+	Assign multiple multiple middleware to Laravel to specific route
+
+		Route::get('/', function () {
+    			//
+		})->middleware('firstMiddleware', 'secondMiddleware');	
+
+	Assign multiple multiple middleware to Laravel to route groups
+
+		Route::group(['middleware' => ['firstMiddleware','secondMiddleware']], function () {
+    			//
+		});
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Display HTML with Blade in Laravel:
+
+	{!! $your_var !!}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Authorization and Authentication:
+
+	Authenticaiton	:	Authentication confirms your identity to grant access to the system
+				It is the process of validating user credentials to gain user access
+
+	Authorization	:	Authorization determines whether you are authorized to access the resources
+				It is the process of verifying whether access is allowed or not	
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Dependency Injection
+
+	Dependency injection is a fancy phrase that essentially means this: 
+	class dependencies are "injected" into the class via the constructor or, in some cases, "setter" methods.
+
+	The Laravel service container is a powerful tool for managing class dependencies and performing dependency injection
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OAUTH	:	Open Authorization is an open standard for token-based authentication and authorization on the Internet
+
+		Laravel uses tokens for authentication users instead of maintaining sesison state in the users requests.
+
+		We create a client in our OAuth server that represents our app
+		The user enters username + password in the login screen and sends it to the API
+		The API sends the username + password + client ID + client secret to the OAuth server
+		The API saves the refresh token in a HttpOnly cookie
+		The API sends the access token to the client
+		The client saves the access token in storage, for instance a browser app saves it in localStorage
+		The client requests something from the API attaching the access token to the request's Authorization header
+		The API sends the access token to the OAuth server for validation
+		The API sends the requested resource back to the client
+		When the access token expires the client request the API for a new token
+		The API sends the request token to the OAuth server for validation
+		If valid, steps 4-6 repeats
+		
+		The reason why you should save the refresh token as a HttpOnly cookie is to prevent Cross-site scripting (XSS) attacks. 
+		The HttpOnly flag tells the browser that this cookie should not be accessible through javascript. 
+		If this flag was not set and your site let users post unfiltered HTML and javascript a malicious user could post something like this
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+	

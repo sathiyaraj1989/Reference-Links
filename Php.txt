@@ -82,4 +82,57 @@ Swap value of two variables without using third variable and using PHP inbuilt f
 
 Difference Between PUT and PATCH methods :
 
+
+	PATCH	:	This is used to update an entity. This is useful when updating a single field in the resource
+
+	PUT	:	This is used to modify a entire resource.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Status code of each REST and SOAP methods :
+
+	100	:	Communicates tranfer protocol level information
+ 
+	200	:	Ok. When client request is accepted successfully 
+
+			GET	-	Resource is sent in the response
+			POST	-	Entity describing or result of the action
+			HEAD	-	Header fields in requested resource are sent in the response without any message body
+			TRACE	-	Entity contains the requested resource are received by the end server.
+		
+			201	:	Created. Whenever an resource is succefully created.
+			201	:	Acccepted. Long while process.  It indicated the request is accepted, but th processing is not been completed
+			204	:	No content. This is sent out in response for GET, POST and DELETE.  When the REST API declines to send any
+					status message or representation in the response message body.			
+		
+
+	300	:	Indicated that the client must take some additional action in order to complete the request
+
+			301	:	Moved permanently. New permanent URI has been assigned to the requested resource.
+			302	:	Found. URL redirection. Provide a URL in header field. User agent will redirect to the new URL
+			303	:	See Other. This will send the reference to the resource without forcing the client to download its state. 
+					Instead, the client may send the get requeest ot the value of the location header.
+			304	:	This is similar to 204(No content). Response body may be empty. 
+			307	:	Temporarily redirect. 307 response will shift the client request to another host
+
+	400	:	Bad request. 
+			
+			401	-	Unauthorized
+			403	-	Forbidden. No permission for access.
+			404	-	Cant map the clients URL
+			405	-	Method not allowed. 	
+			406	-	Not allowed. If API is expecting JSON and resource sending XML means, this error will occurs.
+			412	-	Precondition failed. When condition is not accepted in API, instead of processing the request, 
+					it will send this as the status code.
+			415	-	Unsupported media type. If API is expecting JSON and resource sending XML means, this error will occurs.
+
+	500	:	Internal Server Error.
+			
+			501	-	Not Implemented. Doesn't recognize the request method. 
+
+	Reference Links	:	https://restfulapi.net/http-status-codes/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 	
