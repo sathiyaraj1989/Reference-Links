@@ -56,6 +56,11 @@ SQL Injection :
 		1. 	Input Validation
 		2. 	Using Query builder in model frameworks, since it valdiates the input by having function like, save, store and update etc.
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 	
 
 
